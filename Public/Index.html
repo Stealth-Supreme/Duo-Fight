@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity | Mini Games</title>
+    <link rel="stylesheet" href="Core/Style.css">
+    <link rel="stylesheet" href="Games/GuessNumber/GuessNumber.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu -->
+        <div id="main-menu" class="glass-panel animate-fade">
+            <h1>Mini Games Hub</h1>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Enter Your Name" value="Player">
+            </div>
+            <div class="game-list">
+                <div class="game-card" id="btn-guess-number">
+                    <div class="game-icon">🔢</div>
+                    <div class="game-info">
+                        <h3>Guess the Number</h3>
+                        <p>Multiplayer 1v1 Battle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Screen -->
+        <div id="room-screen" class="glass-panel hidden animate-fade">
+            <h2 id="game-title">Game Title</h2>
+            <div id="room-setup">
+                <div class="flex-col">
+                    <button id="btn-create-room">Create Room</button>
+                    <div class="flex-row">
+                        <input type="text" id="room-code-input" placeholder="Room Code">
+                        <button id="btn-join-room">Join</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="waiting-room" class="hidden">
+                <p class="text-center">Room Code: <strong id="display-room-code">----</strong></p>
+                <div class="players-list" id="players-list">
+                    <!-- Players added here -->
+                </div>
+                <p id="room-status-text" class="text-center mt-1">Waiting for opponent...</p>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div id="game-container" class="glass-panel hidden animate-fade">
+            <!-- Game specific UI injected here -->
+        </div>
+
+        <!-- Notification -->
+        <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="Core/Client.js"></script>
+</body>
+</html>
